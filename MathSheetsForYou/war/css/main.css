@@ -10,7 +10,7 @@ tr, td {
 
 #wrap { 
 	width: 900px;
-	height: 98%; 
+	height: 100%; 
 	margin: 0 auto;
 	box-shadow: 5px 5px 5px #888888;
 	padding: 0px 10px 0px 10px; 
@@ -23,5 +23,29 @@ p {
 
 .filled {
 	background-color: #FFFFFF;
+}
+
+#mainform label.err {
+	
+}
+
+#mainform label.error {
+  /* background:url("../images/unchecked.gif") no-repeat 0px 0px; */
+  font-size: 10px;
+  padding-left: 16px;
+  padding-bottom: 2px;
+  font-weight: normal;
+  color: #EA5200;
+}
+
+#mainform label.checked {
+	font-size: 10px;
+  /* background:url("../images/checked.gif") no-repeat 0px 0px; */
+}
+
+#mainform .success_msg {
+  font-weight: bold;
+  color: #0060BF;
+  margin-left: 19px;
 }
 
