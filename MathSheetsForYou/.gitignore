@@ -1,0 +1,4 @@
+# ignore all classes directories
+# matches "classes" in any subfolder
+classes/
+.metadata
