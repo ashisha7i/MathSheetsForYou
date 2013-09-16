@@ -170,7 +170,7 @@ public class MBUtil {
 		    // Create header table for sheet
 		    float[] layout = new float[] {16.66f,16.66f,16.66f,16.66f,16.66f,16.7f};
 		    Font fontHeader1 = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD);
-		    Font fontHeader2 = FontFactory.getFont(FontFactory.COURIER, 11);
+		    Font fontHeader2 = FontFactory.getFont(FontFactory.COURIER, 10);
 		    PdfPTable th = new PdfPTable(layout);
 		    PdfPCell ch1 = new PdfPCell(new Phrase("Name : \n",fontHeader1)); 
 		    ch1.setBorder(PdfPCell.NO_BORDER);
@@ -185,7 +185,7 @@ public class MBUtil {
 		    ch5.setBackgroundColor(bc);
 		    ch5.setPadding(2f);
 		    PdfPCell ch6 = new PdfPCell(new Phrase(""));
-		    PdfPCell ch7 = new PdfPCell(new Phrase("Wrong : ", fontHeader2));
+		    PdfPCell ch7 = new PdfPCell(new Phrase("Incorrect : ", fontHeader2));
 		    ch7.setBackgroundColor(bc);
 		    ch7.setPadding(2f);
 		    PdfPCell ch8 = new PdfPCell(new Phrase(""));
