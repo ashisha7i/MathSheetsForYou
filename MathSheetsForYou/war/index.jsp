@@ -2,58 +2,14 @@
 <head>
 <title>Welcome to Math Sheets For You</title>
 <link rel="stylesheet" type="text/css" href="css/main.css"/>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="js/mathbuddy.js"></script>
 <script>
-	$(document).ready(function(){
-		$("#btnGenerate").bind("click", function(){
-			getSheetFromServer();
-		});
-		
-		$("#idAdd").click(function(){
-			if(this.checked){
-				$("#forSub").hide();
-				$("#forAdd").show();
-			}
-		});
-		
-		$("#idSub").click(function(){
-			if(this.checked){
-				$("#forAdd").hide();
-				$("#forSub").show();
-			}
-		});
-		
-		$("#idAdd").click();
-	});
-	
-	
-	function getSheetFromServer(){
-		var childName = $("#idChildName").val();
-		var quesType  = $("input:checked").val();
-		var totalQuestions = $("#idTotalQues").val();
-		var maxSum = $("#idMaxSum");
-		var maxNum = $("#idMaxNum");
-
-		var theUrl = "<%= request.getContextPath() %>/main?action=genSheet&" + $("form").serialize();
-		/*
-		$.ajax({
-		    url: theUrl,	    
-		    type: 'GET', 
-		    success: function(result) {
-		    	alert("Returned okay");
-		    },
-		    error: function(xhr) {
-		    	alert("Error calling the function");
-		    }	    		    
-		});	
-		*/
-		
-		window.open(theUrl);
-		
-	}
-	
+	var ctxPath = "<%= request.getContextPath() %>";
 </script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/mathbuddy.js"></script>
+
 <link rel="stylesheet" type="text/css" href="./css/main.css"/>
 </head>
 <body>
@@ -67,7 +23,7 @@
 	</p>
 	<div style="padding: 5px; " class="filled">
 	<h3>Please specify the criteria for generating the sheet : </h3>
-	<form name="criteria" method="post" action="./main">
+	<form name="criteria" id="mainForm" onSubmit="javascript: validateAndSubmit();">
 		<table>
 		<tr>
 			<td style="width: 450px;"><label for="childName">Generated for (child name)</label> <img src="./img/icon_info2.png" title="Child name to be printed on the generated sheet. Leave blank if you do not want any name to be printed on the sheet (e.g. Generating more than one sheets)"></td>
@@ -82,15 +38,15 @@
 		</tr>
 		<tr>
 			<td><label for="totalQuestions">Enter the number of questions to generate</label></td>
-			<td><input type="text" name="totalQuestions" id="idTotalQues" value="50"/></td>
+			<td><input type="text" name="totalQuestions" id="idTotalQues" value="50" required/></td>
 		</tr>
 		<tr id="forAdd">
 			<td><label for="maxSum">Maximum Total <img src="./img/icon_info2.png" title="Generated sheet will contain sums where the sum of the two numbers will be lower than or equal to the value you speficy here (A + B <= Value Specified)"></label></td>
-			<td><input type="text" name="maxSum" id="idMaxSum" value="20"/></td>
+			<td><input type="text" name="maxSum" id="idMaxSum" value="20" required/></td>
 		</tr>
 		<tr id="forSub">
 			<td><label for="mixNum">Greatest Number <img src="./img/icon_info2.png" title="Generated sheet will contain subtraction problems where the larger number (minuend) will be less than or equal to the number specified here"></label></td>
-			<td><input type="text" name="maxNum" id="idMaxNum" value="20"/></td>
+			<td><input type="text" name="maxNum" id="idMaxNum" value="20" required/></td>
 		</tr>
 		<tr id="forSub">
 			<td><label for="allowZero">Generate sums with zero as the second number</label> <img src="./img/icon_info2.png" title="Generated problems will have ZERO as one of the numbers (A + 0 = ? or A - 0 = ?)"></td>
@@ -99,7 +55,7 @@
 		<tr><td>&nbsp;</td></tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td><input type="button" value="Generate" id="btnGenerate"/></td>
+			<td><input type="submit" value="Generate" id="btnGenerate"/></td>
 		</tr>
 		</table>
 	</form>
