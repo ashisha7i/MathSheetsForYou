@@ -31,28 +31,35 @@ $(document).ready(function(){
 				totalQuestions: {
 					required: true,
 					digits: true,
-					minlength: 2
+					minlength: 2,
+					max: 500
 				},
 				maxSum: {
 					required: true,
 					digits: true,
-					minlength: 2
+					minlength: 2,
+					max: 999
 				},
 				maxNum: {
 					required: true,
 					digits: true,
-					minlength: 2
+					minlength: 2,
+					max: 999
 				},
 			},
 			messages: {
 				totalQuestions: {
-					minlength: "Please enter alteast two digits"
+					minlength: "Please enter alteast two digits.",
+					max: "Max questions allowed is 500."
 				},
 				maxSum: {
-					minlength: "Please enter alteast two digits"
+					minlength: "Please enter alteast two digits.",
+					max: "Please enter a number between 10 and 999."
 				},
 				maxNum: {
-					minlength: "Please enter alteast two digits"
+					minlength: "Please enter alteast two digits.",
+					max: "Please enter a number between 10 and 999."
+						
 				}
 			},
 			submitHandler: function(event){
