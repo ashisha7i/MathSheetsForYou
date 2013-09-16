@@ -50,7 +50,7 @@ public class MBUtil {
 		int numA, numB;
 
 		if(allowZero != null){
-			low = 0;
+			low = 0; // If Zero allowed 
 		}
 		
 		Map<Integer, MBSum> sumMap = new HashMap();
