@@ -25,7 +25,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class MBUtil {
 
-	private static final int NO_OF_COLUMNS = 7;
+	private static final int NO_OF_COLUMNS = 10;
 
 	public Map<Integer, MBSum> generateSums(String type, int count, int maxSum, int maxNum,
 			int maxDiff, String allowZero) {
