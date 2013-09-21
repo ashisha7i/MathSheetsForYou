@@ -131,8 +131,8 @@ public class MathSheetsForYouServlet extends HttpServlet {
             
             Multipart multipart = new MimeMultipart();
             
-            MimeBodyPart messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setText(msgBody);
+            //MimeBodyPart messageBodyPart = new MimeBodyPart();
+            //messageBodyPart.setText(msgBody);
             
             
             MimeBodyPart messagePDFPart = new MimeBodyPart();
@@ -141,7 +141,7 @@ public class MathSheetsForYouServlet extends HttpServlet {
             messagePDFPart.setDataHandler(new DataHandler(dataSource));
             messagePDFPart.setFileName("mathsheetsforyou-"+getFileSuffix()+".pdf");
             
-            multipart.addBodyPart(messageBodyPart);
+            //multipart.addBodyPart(messageBodyPart);
             multipart.addBodyPart(messagePDFPart);
             
             msg.setHeader("Content-Type", "multipart/mixed");
