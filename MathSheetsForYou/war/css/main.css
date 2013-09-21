@@ -49,3 +49,6 @@ p {
   margin-left: 19px;
 }
 
+div.ui-dialog-titlebar {
+	background-color: #EA5200 !important;
+}
