@@ -158,12 +158,12 @@ function emailTheSheet(){
 			//$.mobile.changePage("dlgDone.jsp", { role: "dialog" });
 			//$("#dlgText").val("Processing...");
 			//$("#dlgClose").hide();
-			$("#loadingPopup").popup("open");
+			//$("#loadingPopup").popup("open");
 		},
 		success: function(){
 			//$("#dlgText").val("Sheet Email successfully !!");
 			//$("#dlgClose").show();
-			$("#loadingPopup").popup("close");
+			//$("#loadingPopup").popup("close");
 			$("#loadedPopup").popup("open");
 		},
 		error: function(){
