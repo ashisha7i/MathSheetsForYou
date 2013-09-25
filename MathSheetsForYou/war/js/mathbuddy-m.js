@@ -1,9 +1,4 @@
 $(document).ready(function(){
-	$("#loadingPopup").popup();
-	$("#loadedPopup").popup();
-	$("#loadingError").popup();
-	
-	
 	$("#mainForm").validate({
 		rules: {
 			childName: {
@@ -136,6 +131,20 @@ $(document).ready(function(){
 		$("#idAllowZero").val("Y");
 		$("#idAllowZero").slider("refresh");
 		
+		// Initializing popups
+		$("#loadingPopup").popup();
+		$("#loadedPopup").popup();
+		$("#loadingError").popup();
+		
+		// Binding popup close buttons
+		$("#btnPopCloseLoaded").bind("click", function(){
+			$("#loadedPopup").popup("close");
+		});
+		
+		$("#btnPopCloseErr").bind("click", function(){
+			$("#loadingError").popup("close");
+		});
+		
 	});
 	
 	
@@ -146,16 +155,21 @@ function emailTheSheet(){
 		url: theUrl,
 		async: false,
 		beforeSend: function(){
-			$.mobile.changePage("dlgDone.jsp", { role: "dialog" });
-			$("#dlgText").val("Processing...");
-			$("#dlgClose").hide();
+			//$.mobile.changePage("dlgDone.jsp", { role: "dialog" });
+			//$("#dlgText").val("Processing...");
+			//$("#dlgClose").hide();
+			$("#loadingPopup").popup("open");
 		},
 		success: function(){
-			$("#dlgText").val("Sheet Email successfully !!");
-			$("#dlgClose").show();
+			//$("#dlgText").val("Sheet Email successfully !!");
+			//$("#dlgClose").show();
+			$("#loadingPopup").popup("close");
+			$("#loadedPopup").popup("open");
 		},
 		error: function(){
-			alert("Error !!");
+			$("#loadingPopup").popup("close");
+			$("#loadedPopup").popup("close");
+			$("#loadingError").popup("open");
 		},
 		complete: function(){
 			//$("#loadingPopup").popup("close");

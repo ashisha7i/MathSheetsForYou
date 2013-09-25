@@ -82,9 +82,14 @@
 			<p>Generating...</p>
 		</div>
 		
+		<div data-role="popup" id="loadedPopup">
+			<p>Email Sent Successfully</p>
+			<input type="button" value="Close" id="btnPopCloseLoaded" data-mini="true"/>
+		</div>		
 
 		<div data-role="popup" id="loadingError">
 			<p>ERROR</p>
+			<input type="button" value="Close" id="btnPopCloseErr" data-mini="true"/>
 		</div>
 	</body>
 </html>
