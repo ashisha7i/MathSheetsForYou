@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 		$("#btnGenerate").bind("click", function(){
 			validateAndSubmit();
@@ -42,6 +43,7 @@ $(document).ready(function(){
 		$("#idAdd").click();
 		$("#idEmailToCB").prop("checked",false);
 	});
+	
 	
 	
 	function validateAndSubmit(){
@@ -184,7 +186,7 @@ $(document).ready(function(){
 						$("#dialogProcessing").dialog("close");
 					}
 				});
-				
+				event.preventDefault();
 				//window.open(theUrl,"_blank");
 				
 				return false;

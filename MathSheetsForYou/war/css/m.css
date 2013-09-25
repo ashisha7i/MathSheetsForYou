@@ -1,0 +1,78 @@
+body {
+ 	font-family: 'Open Sans',sans-serif;
+    font-size: 0.95em;
+    font-weight: 400;
+}
+
+tr, td {
+	padding-right: 2px;
+}
+
+#wrap { 
+	width: 900px;
+	height: 100%; 
+	margin: 0 auto;
+	box-shadow: 5px 5px 5px #888888;
+	padding: 0px 10px 0px 10px; 
+}
+
+p {
+	font-family: 'Open Sans',sans-serif;
+    font-size: 0.95em;
+    font-weight: 400;
+}
+
+.filled {
+	background-color: #FFFFFF;
+}
+
+#mainform label.err {
+	font-size: 0.50em;
+  	font-weight: 200;
+  	color: #EA5200;
+}
+
+/* label.error {
+  background:url("../images/unchecked.gif") no-repeat 0px 0px;
+  font-size: 0.75em;
+  font-weight: 200;
+  padding-left: 0px;
+  padding-bottom: 2px;
+  font-weight: normal;
+  color: #EA5200;
+} */
+
+label.checked {
+	font-size: 0.95em;
+  /* background:url("../images/checked.gif") no-repeat 0px 0px; */
+}
+
+#mainform .success_msg {
+  font-weight: 400;
+  color: #0060BF;
+  margin-left: 19px;
+}
+
+div.ui-dialog-titlebar {
+	background-color: #EA5200 !important;
+}
+
+.userGreet {
+	font-size:0.50em;
+	color:silver;
+}
+
+label.error {
+color: red;
+font-size: 0.75em;
+font-weight: normal;
+line-height: 0.75;
+margin-top: 0.0em;
+width: 100%;
+float: none;
+padding-left:3px;
+display: inline;
+}
+ 
+ 
+em { color: red; font-weight: bold; padding-right: .25em; }

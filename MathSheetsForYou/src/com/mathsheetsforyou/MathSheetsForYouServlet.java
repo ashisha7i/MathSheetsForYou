@@ -31,18 +31,26 @@ public class MathSheetsForYouServlet extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
-
+		
+		//"childName=&quesType=Add&totalQuestions=50&maxSum=20&maxNum=&allowZero=Y&emailToCB=N&emailTo=agnihotri.ashish%40gmail.com"
 		// System.out.println("Posted :)");
 		String strChildName = request.getParameter("childName");
 		String strSheetType = request.getParameter("quesType");
-		String strTotalQuestions = request.getParameter("totalQuestions");
-		String strMaxSum = request.getParameter("maxSum");
-		String strMaxNum = request.getParameter("maxNum");
+		String strTotalQuestions = getNumericParam(request, "totalQuestions"); //request.getParameter("totalQuestions")
+		String strMaxSum = getNumericParam(request, "maxSum"); //request.getParameter("maxSum")
+		String strMaxNum = getNumericParam(request, "maxNum"); //request.getParameter("maxNum")==null
 		String strAllowZero = request.getParameter("allowZero");
 		String strEmailResults = request.getParameter("emailToCB");
 		String strEmailResultsTo = request.getParameter("emailTo");
 
-		if(strEmailResults != null){
+		// Introducing a 1 second delay
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+		// Ignored
+		}
+		
+		if(strEmailResults != null && strEmailResults.equals("Y")){
 			sendPdfInMail(strChildName, strSheetType, strTotalQuestions, strMaxSum, strMaxNum, strAllowZero, strEmailResultsTo, request, response);
 		} else {
 			generatePdfToPrint(strChildName, strSheetType, strTotalQuestions, strMaxSum, strMaxNum, strAllowZero, response);
@@ -189,6 +197,18 @@ public class MathSheetsForYouServlet extends HttpServlet {
 	private String getFileSuffix() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyMMddHHmmss");
 		return sdf.format(new Date());
+	}
+	
+	private String getNumericParam(HttpServletRequest request, String paramName){
+		String result = "0";
+		String paramVal = request.getParameter(paramName); 
+		if(paramVal == null || paramVal.trim().equals("")){
+			result = "0";
+		} else {
+			result = paramVal;
+		}
+		
+		return result;
 	}
 
 }

@@ -34,9 +34,9 @@ public class MBUtil {
 
 		
 		if (type != null) {
-			if (type.equals("add")) {
+			if (type.equals("Add")) {
 				results = generateAdditionSumsData(count, maxSum, allowZero);
-			} else if (type.equals("sub")) {
+			} else if (type.equals("Sub")) {
 				results = generateSubtractionSumsData(count, maxNum, allowZero);
 			}
 		}
@@ -49,7 +49,7 @@ public class MBUtil {
 		int low = 1;
 		int numA, numB;
 
-		if(allowZero != null){
+		if(allowZero != null && allowZero.equals("Y")){
 			low = 0; // If Zero allowed 
 		}
 		
@@ -98,7 +98,7 @@ public class MBUtil {
 		int low = 1;
 		int numA, numB;
 
-		if(allowZero != null){
+		if(allowZero != null && allowZero.equals("Y")){
 			low = 0;
 		}
 		
@@ -141,9 +141,9 @@ public class MBUtil {
 
 		ByteArrayOutputStream baosPDF = new ByteArrayOutputStream();
 		String sign = "";
-		if(type.equals("add")){
+		if(type.equals("Add")){
 			sign="+";
-		} else if(type.equals("sub")){
+		} else if(type.equals("Sub")){
 			sign = "-";
 		}
 		

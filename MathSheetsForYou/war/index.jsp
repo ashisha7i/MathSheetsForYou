@@ -4,6 +4,12 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="css/main.css"/>
 <script>
+var isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/);
+if(isMobile){
+	window.location = "./m"
+}
+</script>
+<script>
 	var ctxPath = "<%= request.getContextPath() %>";
 </script>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -39,8 +45,8 @@
 		<tr>
 			<td><label for="questionsType">Select sheet type </label></td>
 			<td>
-				<input type="radio" name="quesType" value="add" id="idAdd" checked/>Addition
-				<input type="radio" name="quesType" value="sub" id="idSub"/>Subtraction
+				<input type="radio" name="quesType" value="Add" id="idAdd" checked/>Addition
+				<input type="radio" name="quesType" value="Sub" id="idSub"/>Subtraction
 			</td>
 		</tr>
 		<tr>
