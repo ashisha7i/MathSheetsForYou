@@ -1,7 +1,8 @@
 repo_name: ashisha7i/MathSheetsForYou
 report_id: 6a750a138fd229441fc1eb7ff7e06a7a
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-10T00:58:49+00:00'
+timestamp: '2024-01-05T09:03:55+00:00'
 requested_by: ashisha7i
 provider: github
 branch: master
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/ashisha7i/MathSheetsForYou
   detection_source: Repo Metadata
 - name: Java
   description: A concurrent, class-based, object-oriented, language specifically designed
@@ -25,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/995/K85ZWV2F.png
+  detection_source_url: https://github.com/ashisha7i/MathSheetsForYou
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -35,6 +38,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/ashisha7i/MathSheetsForYou
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -44,4 +48,5 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/ashisha7i/MathSheetsForYou
   detection_source: Repo Metadata
